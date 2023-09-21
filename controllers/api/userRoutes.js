@@ -40,7 +40,7 @@ router.post('/register', async (req, res) => {
 });
 
 // User login route
-router.post('/login', requireAuth, async (req, res) => { // Apply requireAuth middleware here
+router.post('/login', requireAuth, async (req, res) => {
   try {
     // Extract user login data from the request body
     const { email, password } = req.body;
