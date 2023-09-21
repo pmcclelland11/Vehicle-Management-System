@@ -39,7 +39,7 @@ router.get('/vehicles/:type', async (req, res) => {
 });
 
 // Create a new vehicle
-router.post('/vehicles', requireAuth, async (req, res) => { // Apply requireAuth middleware here
+router.post('/vehicles', requireAuth, async (req, res) => { 
   try {
     // Extract vehicle data from the request body
     const { make, model, year, mileage, type, price, isSold } = req.body;
@@ -58,7 +58,7 @@ router.post('/vehicles', requireAuth, async (req, res) => { // Apply requireAuth
     // Respond with the newly created vehicle
     res.json(newVehicle);
   } catch (error) {
-    // Handle vehicle creation error (e.g., validation error)
+    // Handle vehicle creation error
     console.error(error);
     res.status(500).json({ error: 'Vehicle creation failed.' });
   }
