@@ -35,10 +35,6 @@ User.init(
         len: [8],
       },
     },
-    isManager: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
   },
   {
     hooks: {
