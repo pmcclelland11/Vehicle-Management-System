@@ -1,0 +1,92 @@
+[
+    {
+      "make": "Toyota",
+      "model": "Camry",
+      "year": 2020,
+      "mileage": 30000,
+      "type": "Sedan",
+      "price": 25000,
+      "isSold": false
+    },
+    {
+      "make": "Ford",
+      "model": "F-150",
+      "year": 2019,
+      "mileage": 40000,
+      "type": "Truck",
+      "price": 35000,
+      "isSold": true
+    },
+    {
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2022,
+      "mileage": 15000,
+      "type": "Sedan",
+      "price": 22000,
+      "isSold": false
+    },
+    {
+      "make": "Chevrolet",
+      "model": "Silverado",
+      "year": 2021,
+      "mileage": 35000,
+      "type": "Truck",
+      "price": 38000,
+      "isSold": false
+    },
+    {
+      "make": "Jeep",
+      "model": "Cherokee",
+      "year": 2020,
+      "mileage": 25000,
+      "type": "SUV",
+      "price": 28000,
+      "isSold": true
+    },
+    {
+      "make": "Nissan",
+      "model": "Titan",
+      "year": 2022,
+      "mileage": 18000,
+      "type": "Truck",
+      "price": 36000,
+      "isSold": false
+    },
+    {
+      "make": "Ford",
+      "model": "Escape",
+      "year": 2021,
+      "mileage": 20000,
+      "type": "SUV",
+      "price": 26000,
+      "isSold": false
+    },
+    {
+      "make": "Toyota",
+      "model": "Tacoma",
+      "year": 2022,
+      "mileage": 22000,
+      "type": "Truck",
+      "price": 32000,
+      "isSold": true
+    },
+    {
+      "make": "Honda",
+      "model": "CR-V",
+      "year": 2020,
+      "mileage": 18000,
+      "type": "SUV",
+      "price": 28000,
+      "isSold": false
+    },
+    {
+      "make": "Hyundai",
+      "model": "Sonata",
+      "year": 2021,
+      "mileage": 15000,
+      "type": "Sedan",
+      "price": 24000,
+      "isSold": false
+    }
+  ]
