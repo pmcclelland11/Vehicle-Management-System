@@ -1,0 +1,26 @@
+    <main>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Mileage</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+            {{#each vehicles}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{make}}</td>
+                <td>{{model}}</td>
+                <td>{{year}}</td>
+                <td>{{mileage}} miles</td>
+                <td>{{type}}</td>
+                <td>${{price}}</td>
+                <td>{{#if isSold}} Sold {{else}} Available {{/if}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </main>
