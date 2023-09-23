@@ -7,35 +7,18 @@ const { User } = require('../../models');
 const bcrypt = require('bcrypt');
 const { requireAuth } = require("../../middleware/authMiddleware"); 
 
-// User registration route
-router.post('/register', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
-    // Extract user registration data from the request body
-    const { name, email, password } = req.body;
+    const userData = await User.create(req.body);
 
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
 
-    // Create a new user in the database
-    const newUser = await User.create({
-      name,
-      email,
-      password: hashedPassword,
+      res.status(200).json(userData);
     });
-
-    // Set up the user session
-    req.session.user = {
-      id: newUser.id,
-      name: newUser.name,
-      email: newUser.email,
-    };
-
-    // Respond with a success message or redirect to the user's profile page
-    res.json({ message: 'User registered successfully!', user: req.session.user });
-  } catch (error) {
-    // Handle registration error (e.g., duplicate email)
-    console.error(error);
-    res.status(500).json({ error: 'Registration failed.' });
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 
