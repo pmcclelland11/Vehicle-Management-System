@@ -24,10 +24,39 @@ header, .project:not(:last-child) {
 } */
 
 /* Vehicle Handlebars */
-table {
-  text-align: center;
+.first-color { 
+	background: #ececec; 
+}
+	
+.second-color { 
+	background: #9fd3c7; 
 }
 
-tr {
-  border-top: 1px solid grey !important;
+.third-color { 
+	background: #385170; 
+}
+
+.fourth-color { 
+	background: #142d4c; 
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+th {
+color:#385170;
+}
+
+tr:nth-child(even) {background-color: #ececec;}
+
+#logo {
+height: 25%;
+width: 25%;
+
+
 }

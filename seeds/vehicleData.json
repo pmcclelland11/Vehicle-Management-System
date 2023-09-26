@@ -88,5 +88,95 @@
       "type": "Sedan",
       "price": 24000,
       "isSold": false
+    },
+    {
+      "make": "Volkswagen",
+      "model": "Jetta",
+      "year": 2019,
+      "mileage": 28000,
+      "type": "Sedan",
+      "price": 20000,
+      "isSold": false
+    },
+    {
+      "make": "Audi",
+      "model": "Q5",
+      "year": 2021,
+      "mileage": 22000,
+      "type": "SUV",
+      "price": 35000,
+      "isSold": false
+    },
+    {
+      "make": "BMW",
+      "model": "X3",
+      "year": 2020,
+      "mileage": 24000,
+      "type": "SUV",
+      "price": 32000,
+      "isSold": true
+    },
+    {
+      "make": "Mercedes-Benz",
+      "model": "C-Class",
+      "year": 2019,
+      "mileage": 26000,
+      "type": "Sedan",
+      "price": 28000,
+      "isSold": false
+    },
+    {
+      "make": "Lexus",
+      "model": "RX",
+      "year": 2022,
+      "mileage": 15000,
+      "type": "SUV",
+      "price": 38000,
+      "isSold": false
+    },
+    {
+      "make": "Subaru",
+      "model": "Outback",
+      "year": 2021,
+      "mileage": 18000,
+      "type": "SUV",
+      "price": 26000,
+      "isSold": true
+    },
+    {
+      "make": "Tesla",
+      "model": "Model 3",
+      "year": 2022,
+      "mileage": 10000,
+      "type": "Electric",
+      "price": 45000,
+      "isSold": false
+    },
+    {
+      "make": "Kia",
+      "model": "Sportage",
+      "year": 2020,
+      "mileage": 20000,
+      "type": "SUV",
+      "price": 22000,
+      "isSold": false
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-5",
+      "year": 2021,
+      "mileage": 19000,
+      "type": "SUV",
+      "price": 24000,
+      "isSold": false
+    },
+    {
+      "make": "GMC",
+      "model": "Sierra",
+      "year": 2020,
+      "mileage": 28000,
+      "type": "Truck",
+      "price": 32000,
+      "isSold": true
     }
   ]
