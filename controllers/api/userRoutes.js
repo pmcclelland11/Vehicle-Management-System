@@ -1,6 +1,5 @@
 // This file can contain routes and controllers specific to user-related actions, 
 // such as user registration, login, and user-specific API endpoints.
-
 const express = require('express');
 const router = express.Router();
 const { User } = require('../../models');
@@ -15,10 +14,13 @@ router.post('/signup', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      // Respond with a success message
+      res.status(200).json({ message: 'Signup successful!' });
     });
   } catch (err) {
-    res.status(400).json(err);
+    // Handle signup error and respond with an error message
+    console.error(err);
+    res.status(400).json({ error: 'Signup failed. Please try again.' });
   }
 });
 
@@ -66,5 +68,4 @@ router.post('/logout', (req, res) => {
   });
 });
 
-// TODO: Add more user routes (if needed)
 module.exports = router;
