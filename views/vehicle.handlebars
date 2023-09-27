@@ -1,10 +1,7 @@
 <main style="margin-bottom: 20px;">
-    <section class="display-flex justify-between align-center">
-        <div class="input-group">
-            <input id="filter-input" style="margin-right: 10px;">
-            <button id="filter-button">Search</button>
-        </div>
-        <button id="add-vehicle-button" class="btn btn-primary">Add New Vehicle</button>
+    <section class="display-flex justify-center align-center">
+        <input id="filter-input" style="margin-right: 10px;">
+        <button id="filter-button">Search</button>
     </section>
     <br>
     <table class="table table-striped">
@@ -38,6 +35,28 @@
         <button id="logout-button" class="btn btn-primary">Logout</button>
     </section>
 </main>
+
+<script src="/js/vehicles.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const logoutButton = document.getElementById("logout-button");
+
+    logoutButton.addEventListener("click", () => {
+        Swal.fire({
+            title: "Logout",
+            text: "Are you sure you want to logout?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, logout",
+            cancelButtonText: "No, stay logged in",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect to logout URL
+                window.location.href = "/";
+            }
+        });
+    });
+</script>
 
 <!-- Add New Vehicle Modal -->
 <div id="add-vehicle-modal" class="modal">
