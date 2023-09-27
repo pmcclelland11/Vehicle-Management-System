@@ -37,9 +37,13 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/vehicle');
+      // Signup successful, display alert and redirect
+      alert('Signup successful!');
+      document.location.replace('/vehicles');
     } else {
-      alert(response.statusText);
+      // Signup failed, display alert
+      const responseData = await response.json();
+      alert(responseData.error || 'Signup failed. Please try again.');
     }
   }
 };

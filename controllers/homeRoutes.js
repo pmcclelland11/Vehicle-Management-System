@@ -5,10 +5,26 @@ const express = require('express');
 const router = express.Router();
 const { Vehicle } = require("../models")
 
+// Route for the homepage
 router.get('/', (req, res) => {
-  res.render('index'); // TODO: Set up a view for this
+  // Check if the user is logged in
+  const logged_in = req.session.logged_in || false;
+
+  res.render('homepage', { layout: 'main', logged_in });
 });
 
+// Route for the login page
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/vehicle');
+    return;
+  }
+
+  res.render('login');
+});
+
+// Route for the vehicle inventory
 router.get("/vehicles", async (req, res) => {
   try {
     const vehicleData = await Vehicle.findAll()
@@ -20,16 +36,6 @@ console.log(vehicles)
     res.status(500).json(err)
     console.log(err)
   }
-})
-
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/vehicle');
-    return;
-  }
-
-  res.render('login');
 });
 
 module.exports = router;

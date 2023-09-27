@@ -1,6 +1,8 @@
-header, .project:not(:last-child) {
+header,
+.project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
+
 /* 
 .no-button {
   background: none;
@@ -24,39 +26,47 @@ header, .project:not(:last-child) {
 } */
 
 /* Vehicle Handlebars */
-.first-color { 
-	background: #ececec; 
-}
-	
-.second-color { 
-	background: #9fd3c7; 
+.first-color {
+  background: #ececec;
 }
 
-.third-color { 
-	background: #385170; 
+.second-color {
+  background: #9fd3c7;
 }
 
-.fourth-color { 
-	background: #142d4c; 
+.third-color {
+  background: #385170;
 }
+
+.fourth-color {
+  background: #142d4c;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 8px;
 }
+
 th {
-color:#385170;
+  color: #385170;
 }
 
-tr:nth-child(even) {background-color: #ececec;}
+tr:nth-child(even) {
+  background-color: #ececec;
+}
 
 #logo {
-height: 25%;
-width: 25%;
+  height: 25%;
+  width: 25%;
+}
 
-
+#testlogo {
+  height: 75%;
+  width: 75%;
 }
