@@ -6,6 +6,7 @@ const { User } = require('../../models');
 const bcrypt = require('bcrypt');
 const { requireAuth } = require("../../middleware/authMiddleware"); 
 
+// Signup Route
 router.post('/signup', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -14,8 +15,8 @@ router.post('/signup', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      // Respond with a success message
-      res.status(200).json({ message: 'Signup successful!' });
+      // Redirect to the "/vehicles" page upon successful signup
+      res.redirect('/vehicles');
     });
   } catch (err) {
     // Handle signup error and respond with an error message
@@ -24,8 +25,8 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-// User login route
-router.post('/login', requireAuth, async (req, res) => {
+// Login Route
+router.post('/login', async (req, res) => {
   try {
     // Extract user login data from the request body
     const { email, password } = req.body;
@@ -51,8 +52,8 @@ router.post('/login', requireAuth, async (req, res) => {
       email: user.email,
     };
 
-    // Respond with a success message or redirect to the user's dashboard
-    res.json({ message: 'Login successful!', user: req.session.user });
+    // Redirect to the "/vehicles" page upon successful login
+    res.redirect('/vehicles');
   } catch (error) {
     // Handle login error
     console.error(error);
