@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-const router = require('express').Router();
-const { User } = require('../../models');
-
-router.post('/', async (req, res) => {
-=======
 // This file can contain routes and controllers specific to user-related actions, 
 // such as user registration, login, and user-specific API endpoints.
-
 const express = require('express');
 const router = express.Router();
 const { User } = require('../../models');
@@ -14,7 +7,6 @@ const bcrypt = require('bcrypt');
 const { requireAuth } = require("../../middleware/authMiddleware"); 
 
 router.post('/signup', async (req, res) => {
->>>>>>> d80c149c34c5aabf1fb63b07e8de2dabbeaa559b
   try {
     const userData = await User.create(req.body);
 
@@ -22,58 +14,17 @@ router.post('/signup', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      // Respond with a success message
+      res.status(200).json({ message: 'Signup successful!' });
     });
   } catch (err) {
-    res.status(400).json(err);
+    // Handle signup error and respond with an error message
+    console.error(err);
+    res.status(400).json({ error: 'Signup failed. Please try again.' });
   }
 });
 
-<<<<<<< HEAD
-router.post('/login', async (req, res) => {
-  try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
 
-    if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
-    }
-
-    const validPassword = await userData.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
-    }
-
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
-    });
-
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
-
-module.exports = router;
-=======
 // User login route
 router.post('/login', requireAuth, async (req, res) => {
   try {
@@ -118,6 +69,4 @@ router.post('/logout', (req, res) => {
   });
 });
 
-// TODO: Add more user routes (if needed)
 module.exports = router;
->>>>>>> d80c149c34c5aabf1fb63b07e8de2dabbeaa559b

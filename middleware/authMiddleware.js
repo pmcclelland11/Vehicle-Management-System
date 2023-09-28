@@ -10,4 +10,14 @@ const requireAuth = (req, res, next) => {
   }
 };
 
-module.exports = { requireAuth };
+const requireManagerAuth = (req, res, next) => {
+  if (req.session.user && req.session.user.role === 'manager') {
+    // If the user is a manager, allow access
+    next();
+  } else {
+    // If the user is not a manager, deny access or redirect to a restricted page
+    res.status(403).json({ error: 'Access denied. You must be a manager to perform this action.' });
+  }
+};
+
+module.exports = { requireAuth, requireManagerAuth };
