@@ -1,7 +1,10 @@
 <main style="margin-bottom: 20px;">
-    <section class="display-flex justify-center align-center">
-        <input id="filter-input" style="margin-right: 10px;">
-        <button id="filter-button">Search</button>
+    <section class="display-flex justify-between align-center">
+        <div class="input-group">
+            <input id="filter-input" style="margin-right: 10px;">
+            <button id="filter-button">Search</button>
+        </div>
+        <button id="add-vehicle-button" class="btn btn-primary">Add New Vehicle</button>
     </section>
     <br>
     <table class="table table-striped">
@@ -16,18 +19,16 @@
             <th>Status</th>
         </tr>
         {{#each vehicles}}
-        <a href="/vehicle/{{id}}">
-            <tr class="tableRow">
-                <td>{{id}}</td>
-                <td>{{make}}</td>
-                <td>{{model}}</td>
-                <td>{{year}}</td>
-                <td>{{mileage}} miles</td>
-                <td>{{type}}</td>
-                <td>${{price}}</td>
-                <td>{{#if isSold}} Sold {{else}} Available {{/if}}</td>
-            </tr>
-        </a>
+        <tr class="tableRow">
+            <td>{{id}}</td>
+            <td>{{make}}</td>
+            <td>{{model}}</td>
+            <td>{{year}}</td>
+            <td>{{mileage}} miles</td>
+            <td>{{type}}</td>
+            <td>${{price}}</td>
+            <td>{{#if isSold}} Sold {{else}} Available {{/if}}</td>
+        </tr>
         {{/each}}
     </table>
 
@@ -35,28 +36,6 @@
         <button id="logout-button" class="btn btn-primary">Logout</button>
     </section>
 </main>
-
-<script src="/js/vehicles.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    const logoutButton = document.getElementById("logout-button");
-
-    logoutButton.addEventListener("click", () => {
-        Swal.fire({
-            title: "Logout",
-            text: "Are you sure you want to logout?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, logout",
-            cancelButtonText: "No, stay logged in",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Redirect to logout URL
-                window.location.href = "/";
-            }
-        });
-    });
-</script>
 
 <!-- Add New Vehicle Modal -->
 <div id="add-vehicle-modal" class="modal">
@@ -101,42 +80,11 @@
 
 <script src="/js/vehicles.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    const logoutButton = document.getElementById("logout-button");
-    const addVehicleButton = document.getElementById("add-vehicle-button");
 
-    logoutButton.addEventListener("click", () => {
-        Swal.fire({
-            title: "Logout",
-            text: "Are you sure you want to logout?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, logout",
-            cancelButtonText: "No, stay logged in",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Redirect to the homepage
-                window.location.href = "/";
-            }
-        });
-    });
 
-    addVehicleButton.addEventListener("click", () => {
-        // Show the Add New Vehicle modal
-        const modal = document.getElementById("add-vehicle-modal");
-        modal.style.display = "block";
-    });
 
-    // Close the modal when the user clicks the close button
-    const closeModal = document.querySelector(".close");
-    closeModal.addEventListener("click", () => {
-        const modal = document.getElementById("add-vehicle-modal");
-        modal.style.display = "none";
-    });
-</script>
 
-</html>
-
+{{!-- FUTURE DEVELOPMENT --}}
 <!-- Modal for Editing -->
 {{!-- <div class="modal" id="editModal">
     <!-- Add your edit form here -->
