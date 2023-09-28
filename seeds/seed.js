@@ -1,5 +1,5 @@
-const sequelize = require("./config/connection");
-const { Vehicle } = require("./models");
+const sequelize = require("../config/connection");
+const { Vehicle } = require("../models");
 const vehicleData = require("./vehicleData.json");
 
 const seedDatabase = async () => {

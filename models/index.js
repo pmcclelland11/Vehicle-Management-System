@@ -5,16 +5,12 @@ const sequelize = require('../config/connection');
 const User = require('./User');
 const Vehicle = require('./Vehicle');
 
-// Initialize models and define associations
-User.init(sequelize);
-Vehicle.init(sequelize);
-
-// Define model associations here (if any)
+// Defining model associations
 User.hasMany(Vehicle, {
-  foreignKey: 'user_id', // You may need to adjust the foreign key based on your database schema
+  foreignKey: 'user_id', 
 });
 Vehicle.belongsTo(User, {
-  foreignKey: 'user_id', // You may need to adjust the foreign key based on your database schema
+  foreignKey: 'user_id',
 });
 
 // Export the initialized models

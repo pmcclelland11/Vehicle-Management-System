@@ -6,6 +6,7 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
+<<<<<<< HEAD
     <h3>Year of Car:</h3> {{!Have them enter the Year}}
  
     {{!-- <form class="form car-form">
@@ -34,16 +35,40 @@
       <div class="form-group">
         <label for="car-desc">description:</label>
         <textarea class="form-input" id="car-desc" name="cart-desc"></textarea>
+=======
+    <h3>Create a New Project:</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="project-name">project name:</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" />
+      </div>
+      <div class="form-group">
+        <label for="project-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      </div>
+      <div class="form-group">
+        <label for="project-desc">description:</label>
+        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+>>>>>>> d80c149c34c5aabf1fb63b07e8de2dabbeaa559b
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
+<<<<<<< HEAD
   </div> --}}
 
   {{#if projects.length}}
   <div class="col-md-6 project-list">
     <h3>Year, Make, & Model:</h3>
+=======
+  </div>
+
+  {{#if projects.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+>>>>>>> d80c149c34c5aabf1fb63b07e8de2dabbeaa559b
 
     {{#each projects as |project|}}
     <div class="row mb-2">
