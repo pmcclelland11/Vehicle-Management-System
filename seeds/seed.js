@@ -21,9 +21,7 @@
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 const { User } = require("../models");
- const { Vehicle } = require("../models");
-const vehicleData = require("./vehicleData.json");
-​
+
 const userData = [
   {
     name: "Manager User",
@@ -38,16 +36,16 @@ const userData = [
     role: "employee",
   },
 ];
-​
+
 const seedUsers = async () => {
   await sequelize.sync({ force: true });
-​
+
   for (const user of userData) {
     user.password = await bcrypt.hash(user.password, 10);
     await User.create(user);
   }
-​
+
   process.exit(0);
 };
-​
+
 seedUsers();
