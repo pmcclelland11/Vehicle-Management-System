@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const { User } = require('../../models');
 const bcrypt = require('bcrypt');
-const { requireAuth } = require('../../middleware/authMiddleware');
 
 // Signup Route
 router.post('/signup', async (req, res) => {
@@ -49,7 +48,7 @@ router.post('/login', async (req, res) => {
     console.log(user.password, password);
     
     // Check the password using bcrypt
-    const isPasswordValid = bcrypt.compareSync(user.password, password);
+    const isPasswordValid = bcrypt.compareSync(password, user.password);
     console.log(isPasswordValid)
 
     // Set up the user session upon successful login

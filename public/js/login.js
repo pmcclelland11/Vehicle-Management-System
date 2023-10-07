@@ -14,10 +14,26 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/vehicles');
+      // Login successful, display SweetAlert2 success dialog
+      Swal.fire({
+        title: 'Login Successful!',
+        icon: 'success',
+        timer: 2000,
+        showConfirmButton: false,
+      });
+
+      // Redirect the user to the profile page after a short delay
+      setTimeout(() => {
+        document.location.replace('/vehicles');
+      }, 2000);
     } else {
-      alert(response.statusText);
+      // Login failed, display SweetAlert2 error dialog
+      Swal.fire({
+        title: 'Login Failed!',
+        text: 'Please check your email and password.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
     }
   }
 };
@@ -37,13 +53,26 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // Signup successful, display alert and redirect
-      alert('Signup successful!');
-      document.location.replace('/vehicles');
+      // Login successful, display SweetAlert2 success dialog
+      Swal.fire({
+        title: 'Signup Successful!',
+        icon: 'success',
+        timer: 2000,
+        showConfirmButton: false,
+      });
+
+      // Redirect the user to the profile page after a short delay
+      setTimeout(() => {
+        document.location.replace('/vehicles');
+      }, 2000);
     } else {
-      // Signup failed, display alert
-      const responseData = await response.json();
-      alert(responseData.error || 'Signup failed. Please try again.');
+      // Login failed, display SweetAlert2 error dialog
+      Swal.fire({
+        title: 'Signup Failed!',
+        text: 'Please try again..',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
     }
   }
 };
