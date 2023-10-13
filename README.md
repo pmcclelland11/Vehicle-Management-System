@@ -23,14 +23,15 @@ To run the project in your local machine:
 1. Open visual studio in your computer or laptop
 2. Clone the git project: https://github.com/pmcclelland11/Vehicle-Management-System.git
 3. Pull the latest from the 'main' branch.
-4. Open the VS code terminal.
-5. Go the directory file.
-6. Run mysql.
-7. Type source db/schema.sql on the terminal and exit.
-8. Type nmp install on the terminal.
-9. Type node seeds/seed.js.
-10. Type nmp run start.
-11. Open on your web browser and type http://localhost:3001/
+4. Open a new terminal and type npm install to install the dependencies
+5. Run the following commands in this order:
+6. mysql -u root -p  (put your password)
+7. source db/schema.sql 
+8. exit
+9. npm run seed
+10. Locate the server file and locate yourself there
+11. Open a new terminal and type npm start or node server
+
 
 
 Access the deployed project here:
